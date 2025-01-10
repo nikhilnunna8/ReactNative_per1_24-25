@@ -3,17 +3,16 @@ import { Text, View, StyleSheet } from "react-native";
 
 export default function Index() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Ox</Text>
-      <Text style={styles.textbody}>Hi</Text>
-      <View style={styles.textbodycontainer}>
-        <Text>A</Text>
+    <View>
+      <View style={styles.container}>
+        <View><Text>1</Text></View>
+        <View><Text>2</Text></View>
+        <View><Text>3</Text></View>
       </View>
-      <View style={styles.textbodycontainer}>
-        <Text>B</Text>
-      </View>
-      <View style={styles.textbodycontainer}>
-        <Text>C</Text>
+      <View style={styles.containergreen}>
+        <View><Text>1</Text></View>
+        <View><Text>2</Text></View>
+        <View><Text>3</Text></View>
       </View>
     </View>
   );
@@ -24,10 +23,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1, //fills whole space or ratio to other elements
     padding: 150,
-    margin: 20,
-    backgroundColor: "orange",
+    margin: 40,
+    marginBottom: 5,
+    backgroundColor: "gray",
     flexDirection: "row",
-    justifyContent: "center", //main direction
     alignItems: "center", // other direction
   },
   header: {
@@ -38,10 +37,10 @@ const styles = StyleSheet.create({
   textbody: {
     fontSize: 18
   },
-  textbodycontainer: {
+  bodycontainer: {
     height: 50,
     width: 50,
-    backgroundColor: "yellow",
+    backgroundColor: "red",
     marginTop: 10,
     justifyContent: "center",
     margin: 10,
@@ -49,5 +48,13 @@ const styles = StyleSheet.create({
     borderColor: "green",
     borderWidth: 2,
 
+  },
+  containergreen: {
+    flex: 3, //fills whole space or ratio to other elements
+    padding: 150,
+    margin: 40,
+    backgroundColor: "darkgreen",
+    flexDirection: "row",
+    alignItems: "center", // other direction
   },
 });

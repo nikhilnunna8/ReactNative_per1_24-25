@@ -1,11 +1,24 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableHighlight, View } from 'react-native'
 import React from 'react'
 
-const MyButton = () => {
+
+type propsType = {
+  title: string;
+  color?: string; //optional parameter/prop with the ?
+  textColor?: string;
+  onPress: () => void;
+};
+
+const MyButton: React.FC<propsType> = ({
+  title,
+  color = "gray", //specifying a default of green
+  textColor = "black", 
+  onPress,
+}) => {
   return (
-    <View style={styles.buttonContainer}>
-      <Text style={styles.buttonText}>MyButton</Text>
-    </View>
+    <TouchableHighlight style={[styles.buttonContainer, { backgroundColor: color }]} onPress={onPress}>
+      <Text style={[styles.buttonText, { color: textColor }]}>{title}</Text>
+    </TouchableHighlight>
   )
 }
 

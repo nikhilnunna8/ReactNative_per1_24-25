@@ -1,4 +1,6 @@
 import { Text, View, StyleSheet} from "react-native";
+import React, { useState } from 'react';
+import RNPickerSelect from 'react-native-picker-select';
 
 export default function Index() {
   return (

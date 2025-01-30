@@ -16,6 +16,7 @@ const colors = {
     },
     green:"#8fce00",
     red: "#FF0000",
+    white: "#ffffff",
 
 };
 

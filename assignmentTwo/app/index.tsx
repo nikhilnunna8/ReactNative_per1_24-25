@@ -1,25 +1,27 @@
-import { Text, View, StyleSheet} from "react-native";
+import { Switch, Text, View, StyleSheet, TouchableOpacity} from "react-native";
 import React, { useState } from 'react';
-import RNPickerSelect from 'react-native-picker-select';
+import MySlider from "./components/MySlider";
+import colors from "@/styles/colors";
+import defaultStyles from "@/styles/defaultStyles";
+
 
 export default function Index() {
+  const [selectedId, setSelectedId] = useState(false)
+  const toggleSwitch = () => {
+    setSelectedId(previousState => !previousState)
+    console.log("selected" + selectedId)
+  };
+
+
   return (
-    <View style={styles.background}>
-      <Text style={styles.title}>Cars Info</Text>
-      
+    <View style={[defaultStyles.container, {backgroundColor: selectedId == false? colors.primary.light : colors.primary.dark}]}>
+      <Text style={[defaultStyles.title, {color: selectedId == false? colors.tertiary.light : colors.tertiary.dark}]}>Cars Survey</Text>
+      <View style = {[defaultStyles.slidercontainer, {backgroundColor: selectedId == false? colors.secondary.light : colors.secondary.dark}]}>
+        <MySlider 
+          value = {selectedId}
+          onValueChange = {toggleSwitch}
+        />
+      </View>
     </View>
   );
 }
-const styles = StyleSheet.create({
-  title: {
-    fontSize: 25,
-    fontWeight: "bold",
-  },
-  background: {
-    backgroundColor: "white",
-    justifyContent: "flex-start",
-    flex: 1,
-    alignItems: "center",
-    padding: 10,
-  },
-});
